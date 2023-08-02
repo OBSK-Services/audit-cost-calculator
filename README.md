@@ -1,3 +1,5 @@
-# Yield farming pools fabric MVP
+# OBSK Security Audit helper project
 
-An MVP for fabric of yield farming pools and adapters to an external protocol for demonstrative purposes and as a Proof of Concept.
+A project aimed to calculate costs and run lemmas and theories of the particular audit project.
+
+## FORKING ONLY
