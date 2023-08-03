@@ -2,8 +2,8 @@ const fse = require("fs-extra");
 const parser = require('@solidity-parser/parser');
 module.exports = (task) =>
   task(
-    "obsk",
-    "Returns count of compilation units for the OBSK Security audit based on AST depth.",
+    "calculate",
+    "Returns count of compilation units for the OBSK Security audit based on AST depth and audit cost.",
   )
     .addOptionalParam('price', "Define how much to charge per CU.", 1.574, types.float)
     .setAction(async ({ price }, hre) => {
@@ -81,7 +81,7 @@ module.exports = (task) =>
         'AssemblyMemberAccess',
         'TypeDefinition'
       ];
-      let allArtifacts = await hre.run("get_all_artifacts");
+      let allArtifacts = await hre.run("artifacts");
       allArtifacts = allArtifacts
         .map(e => e.split(':'))
         .filter(e => e[0].startsWith("contracts"));
